@@ -10,7 +10,7 @@ use Role::Tiny;
 with 'TableDataRole::Source::AOA';
 
 around new => sub {
-    require App::BPOMUtils::Table;
+    require App::BPOMUtils::Table::FoodCategory;
 
     my $orig = shift;
     my $self = shift;
@@ -18,10 +18,10 @@ around new => sub {
     $orig->(
         $self,
         column_names => [ sort {
-            $App::BPOMUtils::Table::meta_idn_bpom_kategori_pangan->{fields}{$a}{pos} <=>
-            $App::BPOMUtils::Table::meta_idn_bpom_kategori_pangan->{fields}{$b}{pos};
-        } keys %{ $App::BPOMUtils::Table::meta_idn_bpom_kategori_pangan->{fields} } ],
-        aoa => $App::BPOMUtils::Table::data_idn_bpom_kategori_pangan,
+            $App::BPOMUtils::Table::FoodCategory::meta_idn_bpom_kategori_pangan->{fields}{$a}{pos} <=>
+            $App::BPOMUtils::Table::FoodCategory::meta_idn_bpom_kategori_pangan->{fields}{$b}{pos};
+        } keys %{ $App::BPOMUtils::Table::FoodCategory::meta_idn_bpom_kategori_pangan->{fields} } ],
+        aoa => $App::BPOMUtils::Table::FoodCategory::data_idn_bpom_kategori_pangan,
         @_,
     );
 };
