@@ -23,4 +23,8 @@ L<TableData>
 
 L<https://pom.go.id>
 
+Some modules are currently split:
+L<TableData::Business::ID::BPOM::FoodIngredientRBA>,
+L<TableData::Business::ID::BPOM::FoodAdditive>
+
 =cut
